@@ -1,0 +1,6 @@
+wget
+tree
+htop
+tldr
+tmux
+gpg
