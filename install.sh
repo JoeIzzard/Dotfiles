@@ -26,14 +26,14 @@ function linkDotfilesZSH {
   fi
 
 
-  rm ~/.zshrc
+  rm -f ~/.zshrc
   ln -s $DOTFILESDIR/zsh/configs/$2 ~/.zshrc
 
   rm -R ~/.oh-my-zsh/custom/themes
   rm -R ~/.oh-my-zsh/custom/plugins
 
   ln -s $DOTFILESDIR/zsh/themes ~/.oh-my-zsh/custom/themes
-  ln -s $DOTFILESDIR/zsh/plugins ~/oh-my-zsh/custom/plugins
+  ln -s $DOTFILESDIR/zsh/plugins ~/.oh-my-zsh/custom/plugins
 }
 
 function linkDotfilesHyper {
