@@ -20,7 +20,7 @@ echo "Version: 1.0.0"
 
 if [ ! -n "$1" ]; then
   echo "[Warning] Profile type not specified, defaulting to work"
-elif [ "$1" -eq "container" ]; then
+elif [ "$1" = "container" ]; then
   echo "[Info] Installing Container Profile"
 
   # Installing Oh My ZSH
@@ -28,7 +28,7 @@ elif [ "$1" -eq "container" ]; then
   sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" --unattended
   linkDotfilesZSH /dotfiles container
 
-elif [ "$1" -eq "work" ]; then
+elif [ "$1" = "work" ]; then
   echo "[Info] Installing Work Profile"
 
   # Installing Oh My ZSH
