@@ -56,7 +56,7 @@ elif [ "$1" = "container" ]; then
   # Installing Oh My ZSH
   echo "[Info] Installing Oh My ZSH"
   sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" --unattended
-  linkDotfilesZSH /dotfiles container
+  linkDotfilesZSH ~/.dotfiles container
 
 elif [ "$1" = "work" ]; then
   echo "[Info] Installing Work Profile"
