@@ -18,30 +18,6 @@ EOF
 echo ""
 echo "Version: 1.0.0"
 
-if [ ! -n "$1" ]; then
-  echo "[Warning] Profile type not specified, defaulting to work"
-elif [ "$1" = "container" ]; then
-  echo "[Info] Installing Container Profile"
-
-  # Installing Oh My ZSH
-  echo "[Info] Installing Oh My ZSH"
-  sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" --unattended
-  linkDotfilesZSH /dotfiles container
-
-elif [ "$1" = "work" ]; then
-  echo "[Info] Installing Work Profile"
-
-  # Installing Oh My ZSH
-  echo "[Info] Installing Oh My ZSH"
-  sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" --unattended
-  linkDotfilesZSH ~/.dotfiles work
-
-  echo "[Info] Install Hyper Preferences"
-  linkDotfilesHyper ~/.dotfiles
-else 
-  echo "[Error] Unknown install type"
-fi
-
 function linkDotfilesZSH {
   DOTFILESDIR="/dotfiles"
 
@@ -70,3 +46,28 @@ function linkDotfilesHyper {
   rm ~/.hyper.js
   ln -s $DOTFILESDIR/hyper/preferences ~/.hyper.js
 }
+
+
+if [ ! -n "$1" ]; then
+  echo "[Warning] Profile type not specified, defaulting to work"
+elif [ "$1" = "container" ]; then
+  echo "[Info] Installing Container Profile"
+
+  # Installing Oh My ZSH
+  echo "[Info] Installing Oh My ZSH"
+  sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" --unattended
+  linkDotfilesZSH /dotfiles container
+
+elif [ "$1" = "work" ]; then
+  echo "[Info] Installing Work Profile"
+
+  # Installing Oh My ZSH
+  echo "[Info] Installing Oh My ZSH"
+  sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" --unattended
+  linkDotfilesZSH ~/.dotfiles work
+
+  echo "[Info] Install Hyper Preferences"
+  linkDotfilesHyper ~/.dotfiles
+else 
+  echo "[Error] Unknown install type"
+fi
