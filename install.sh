@@ -38,6 +38,8 @@ else if [ "$1" -eq "work" ]; then
 
   echo "[Info] Install Hyper Preferences"
   linkDotfilesHyper ~/.dotfiles
+else 
+  echo "[Error] Unknown install type"
 fi
 
 function linkDotfilesZSH {
